@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    
+    <h1>Pokedex</h1>
+    <div>
+        <input type="radio" id="clar" name="colors" value="clar">
+        <label for="clar">Clar</label>
+        <input type="radio" id="fosc" name="colors" value="fosc">
+        <label for="fosc">Fosc</label>
+    </div>
+
+    <button onclick="NouPokemon()">Nou pokemon</button>
+
+    <section id="cards" class="cards"></section>
+
+    <template id="card-template">
+        <article id="" class="card">
+            <h2 class="title"></h2>
+            <p class="info"></p>
+        </article>
+    </template>
+
+    
+</body>
+
+
+</html>
