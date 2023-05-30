@@ -17,14 +17,19 @@
         <label for="fosc">Fosc</label>
     </div>
 
-    <button onclick="NouPokemon()">Nou pokemon</button>
+    <button onclick="nouPokemon()">Nou pokemon</button>
 
     <section id="cards" class="cards"></section>
 
+
+    <section>
+        <div id="view" class='card-list'></div>
+    </section>
+
     <template id="card-template">
         <article id="" class="card">
-            <h2 class="title"></h2>
-            <p class="info"></p>
+            <h4 class='card-title'></h4>
+            <img loading="lazy" alt="" src="" class='card-image' />
         </article>
     </template>
 

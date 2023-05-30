@@ -1,40 +1,19 @@
 let url="https://pokeapi.co/api/v2/pokemon";
 let json;
-let llistaPokemons = await getPokemons();
+const view = document.querySelector('#view')
 
 
-function getJson()
-{
-    fetch(json)
-    .then(x=> {console.dir(x);
-    return x.json}).
-    then(y=> {
-        console.dir(y);
-        document.getElementById("").innerHTML=y.nom;
-    })
-}
-
-function fecthPockemonByNumber(numero)
-{
-    let urlPokemon = url+"/"+numero;
-
-    fetch(urlPokemon).then(X=>{
-        console.dir(x);
-        return x.json();
-    }).then(y=>{
-        console.dir(y);
-        document.getElementById("nom").innerHTML=y.name;
-    })
-
-}
-
-
-function NouPokemon()
+function nouPokemon()
 {
     let idPokemon = getRandomInt(1110);
-    let pokemon = fecthPockemonByNumber(idPokemon);
-    addPokemon(pokemon);
+   
+    let urlPokemon = url+"/"+idPokemon;
 
+    fetch(urlPokemon).then(x=>{
+        return (x.json())
+    }).then(y=> {
+        addPokemon(y)
+    })
 }
 
 function addPokemon(pokemon)
@@ -43,23 +22,18 @@ function addPokemon(pokemon)
 	const fragment = document.createDocumentFragment()
 
 	
-		template.querySelector('.card-title').innerHTML = gif.title
-		template.querySelector('.card-image').setAttribute('src', gif.url)
-		template.querySelector('.card-image').setAttribute('alt', gif.title)
-		const clone = template.cloneNode(true)
-		fragment.appendChild(clone)
-	
+    template.querySelector('.card-title').innerHTML = pokemon.name
+   
+    const clone = template.cloneNode(true)
+    fragment.appendChild(clone)
+
 
 	view.appendChild(fragment)
 }
 
-
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-
-
 
 function obtenirPokemons()
 {
