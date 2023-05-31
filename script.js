@@ -61,6 +61,9 @@ function mostrarDetalls(idPokemon)
     }).then(y=> {
         document.querySelector('#nomPokemon').innerHTML = y.name
         document.querySelector('#imgPokemon').setAttribute('src', y.sprites.front_default)
+        document.querySelector('#imgPokemon2').setAttribute('src', y.sprites.back_default)
+        document.querySelector('#atacPokemon').innerHTML = y.stats[1].base_stat
+        document.querySelector('#defensaPokemon').innerHTML = y.stats[2].base_stat
     })
 
 
