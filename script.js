@@ -5,7 +5,7 @@ const view = document.querySelector('#view')
 
 function nouPokemon()
 {
-    let idPokemon = getRandomInt(1010); /*1110*/
+    let idPokemon = getRandomInt(1000); /*1110*/
    
     let urlPokemon = url+"/"+idPokemon;
 
@@ -22,6 +22,10 @@ function addPokemon(pokemon)
 	const fragment = document.createDocumentFragment()
 	
     template.querySelector('.card-title').innerHTML = pokemon.name
+
+    
+    template.querySelector('.card-image').setAttribute('src', pokemon.sprites.front_default)
+
    
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)

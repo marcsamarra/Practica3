@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <script defer src="script.js"></script>
+    <script defer src="darklight.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light" id="body"> 
     
     <h1>Pokedex</h1>
     <div>
-        <input type="radio" id="clar" name="colors" value="clar">
-        <label for="clar">Clar</label>
-        <input type="radio" id="fosc" name="colors" value="fosc">
-        <label for="fosc">Fosc</label>
+        <input type="radio" id="light" name="colors" value="light" checked="true">
+        <label for="light">Clar</label>
+        <input type="radio" id="dark" name="colors" value="dark">
+        <label for="dark">Fosc</label>
     </div>
 
     <input class='search-input' type='text' placeholder='Buscar...' />
@@ -36,6 +37,5 @@
 
     
 </body>
-
 
 </html>

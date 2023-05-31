@@ -1,13 +1,31 @@
-body {
+:root{
+	--bg-color : lightgrey;
+	--txt-color : crimson;
+}
+
+body.dark {
 	background-color: #282c34;
+	color: orange;
+}
+
+body.light
+{
+	background-color: lightgrey;
+	color: crimson;
+}
+
+body
+{
+	background-color: var(--bg-color);
 	min-height: 100vh;
 	display: flex;
-	flex-direction: column;
+	flex-direction:column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: yellow;
+	color: var(--txt-color);
 }
+
 
 h1 {
 	text-align: center;
