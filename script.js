@@ -64,6 +64,13 @@ function mostrarDetalls(idPokemon)
         document.querySelector('#imgPokemon2').setAttribute('src', y.sprites.back_default)
         document.querySelector('#atacPokemon').innerHTML = y.stats[1].base_stat
         document.querySelector('#defensaPokemon').innerHTML = y.stats[2].base_stat
+        
+        document.querySelector('#tipusPokemon').innerHTML=''
+        y.types.forEach(element => {
+            document.querySelector('#tipusPokemon').innerHTML +=
+            element.type.name+' '
+        });
+        
     })
 
 
