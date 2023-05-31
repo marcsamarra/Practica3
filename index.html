@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -17,12 +18,12 @@
         <label for="fosc">Fosc</label>
     </div>
 
-    <button onclick="nouPokemon()">Nou pokemon</button>
+    <input class='search-input' type='text' placeholder='Buscar...' />
+    <button class='search-submit'>Buscar</button>
 
-    <section id="cards" class="cards"></section>
-
-
-    <section>
+    <button onclick="obtenirPokemons()">Crea pokemons</button>
+   
+    <section id="cards" class="cards">
         <div id="view" class='card-list'></div>
     </section>
 

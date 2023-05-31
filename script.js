@@ -5,7 +5,7 @@ const view = document.querySelector('#view')
 
 function nouPokemon()
 {
-    let idPokemon = getRandomInt(1110);
+    let idPokemon = getRandomInt(1010); /*1110*/
    
     let urlPokemon = url+"/"+idPokemon;
 
@@ -20,7 +20,6 @@ function addPokemon(pokemon)
 {
 	const template = document.querySelector('#card-template').content
 	const fragment = document.createDocumentFragment()
-
 	
     template.querySelector('.card-title').innerHTML = pokemon.name
    
@@ -39,7 +38,8 @@ function obtenirPokemons()
 {
     for (let i=0;i<10;i++)
     {
-        let num= Math.random() * 100;
+        view.innerHTML = '';
+        nouPokemon();
     }
 
 }
