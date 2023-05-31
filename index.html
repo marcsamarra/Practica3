@@ -18,20 +18,45 @@
         <input type="radio" id="dark" name="colors" value="dark">
         <label for="dark">Fosc</label>
     </div>
-
+  
     <input class='search-input' type='text' placeholder='Buscar...' />
     <button class='search-submit'>Buscar</button>
-
     <button onclick="obtenirPokemons()">Crea pokemons</button>
    
-    <section id="cards" class="cards">
-        <div id="view" class='card-list'></div>
+    <section id="cards" class="cards" margin="10px">
+       
+        <div id="view" class='card-list' padding="4px"></div>
+    </section>
+
+    <section id="detail" class="detail" hidden="true">
+        <div>
+            <h1 id="nomPokemon">Nom</h1>
+            <img id="imgPokemon" src="">
+            <table>
+                <tr>
+                    <td>valor d'atac</td><td>6</td>
+                    
+                </tr>
+                <tr>
+                    <td>valor de defensa</td>
+                    
+                </tr>
+                <tr>
+                    <td>tipus</td>
+                    
+                </tr>
+            </table>
+
+            <button onclick="mostrarLlista()">Tancar</button>
+
+        </div>
     </section>
 
     <template id="card-template">
         <article id="" class="card">
             <h4 class='card-title'></h4>
             <img loading="lazy" alt="" src="" class='card-image' />
+            <button class='card-button' onclick="">Detalls</button>
         </article>
     </template>
 

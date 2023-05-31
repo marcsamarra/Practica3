@@ -1,7 +1,8 @@
 let url="https://pokeapi.co/api/v2/pokemon";
 let json;
 const view = document.querySelector('#view')
-
+const detail = document.querySelector('#detail')
+const cards = document.querySelector('#cards')
 
 function nouPokemon()
 {
@@ -22,10 +23,10 @@ function addPokemon(pokemon)
 	const fragment = document.createDocumentFragment()
 	
     template.querySelector('.card-title').innerHTML = pokemon.name
-
-    
     template.querySelector('.card-image').setAttribute('src', pokemon.sprites.front_default)
+    let fnboto = 'mostrarDetalls('+pokemon.id+')'
 
+    template.querySelector('.card-button').setAttribute('onclick', fnboto)
    
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
@@ -46,4 +47,27 @@ function obtenirPokemons()
         nouPokemon();
     }
 
+}
+
+function mostrarDetalls(idPokemon)
+{
+    detail.style.display="flex";
+    cards.style.display="none";
+
+    let urlPokemon = url+"/"+idPokemon;
+
+    fetch(urlPokemon).then(x=>{
+        return (x.json())
+    }).then(y=> {
+        document.querySelector('#nomPokemon').innerHTML = y.name
+        document.querySelector('#imgPokemon').setAttribute('src', y.sprites.front_default)
+    })
+
+
+}
+
+function mostrarLlista()
+{
+    detail.style.display="none";
+    cards.style.display="flex";
 }
